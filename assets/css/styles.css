@@ -77,23 +77,6 @@ body {
 body {
     /*========== Colors ==========*/
   --hue-color: 120;
-  --black-color: hsl(var(--hue-color), 4%, 90%);
-  --black-color-alt: hsl(var(--hue-color), 77%, 27%);
-  --title-color: hsl(var(--hue-color), 4%, 25%);
-  --text-color: hsl(var(--hue-color), 4%, 45%);
-  --text-color-light: hsl(var(--hue-color), 4%, 65%);
-  --white-color: rgb(163, 163, 163);
-  --body-color: hsl(var(--hue-color), 4%, 86%);
-  --container-color: hsl(var(--hue-color), 4%, 80%);
-  --text-gradient: linear-gradient(hsl(var(--hue-color), 25%, 40%), hsl(var(--hue-color), 64%, 70%));
-  --scroll-thumb-color: hsl(var(--hue-color), 4%, 16%);
-  --scroll-thumb-color-alt: hsl(var(--hue-color), 4%, 20%);
-  --filter-icon: invert(.9);
-  transition: var(--transition-anime);
-}
-
-body.dark {
-  --hue-color: 120;
   --black-color: hsl(var(--hue-color), 4%, 4%);
   --black-color-alt: hsl(var(--hue-color), 77%, 27%);
   --title-color: hsl(var(--hue-color), 4%, 95%);
@@ -102,10 +85,31 @@ body.dark {
   --white-color: #FFF;
   --body-color: hsl(var(--hue-color), 4%, 6%);
   --container-color: hsl(var(--hue-color), 4%, 10%);
-  --text-gradient: linear-gradient(hsl(var(--hue-color), 4%, 40%), hsl(var(--hue-color), 4%, 8%));
+  /* --text-gradient: linear-gradient(hsl(var(--hue-color), 4%, 40%), hsl(var(--hue-color), 4%, 8%)); */
+  --text-gradient: linear-gradient(hsl(var(--hue-color), 89%, 50%), hsl(var(--hue-color), 89%, 50%));
   --scroll-thumb-color: hsl(var(--hue-color), 4%, 16%);
   --scroll-thumb-color-alt: hsl(var(--hue-color), 4%, 20%);
   --filter-icon: invert(0);
+}
+
+body.dark {
+
+
+  --hue-color: 120;
+  --black-color: hsl(var(--hue-color), 4%, 90%);
+  --black-color-alt: hsl(var(--hue-color), 77%, 27%);
+  --title-color: hsl(var(--hue-color), 4%, 25%);
+  --text-color: hsl(var(--hue-color), 4%, 45%);
+  --text-color-light: hsl(var(--hue-color), 4%, 65%);
+  --white-color: rgb(163, 163, 163);
+  --body-color: hsl(var(--hue-color), 100%, 100%);
+  --container-color: hsl(var(--hue-color), 4%, 80%);
+  --text-gradient: linear-gradient(hsl(var(--hue-color), 89%, 50%), hsl(var(--hue-color), 89%, 50%));
+  --scroll-thumb-color: hsl(var(--hue-color), 4%, 16%);
+  --scroll-thumb-color-alt: hsl(var(--hue-color), 4%, 20%);
+  --filter-icon: invert(.9);
+  transition: var(--transition-anime);
+
 }
 /* -------------------------------------------- */
 
@@ -176,6 +180,7 @@ img {
 .header {
   width: 100%;
   position: fixed;
+  height: 10vh;
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
@@ -193,10 +198,12 @@ img {
 
 .nav__logo {
   display: flex;
-  width: 1.5rem;
-  filter: var(--filter-icon);
+  width: 4rem;
+  margin-top: 2rem;
+  /* filter: var(--filter-icon); */
   transition: var(--transition-anime);
 }
+
 
 .nav__color {
   position: absolute;
@@ -283,14 +290,14 @@ img {
 
 /*=============== HOME ===============*/
 .home__img {
-  width: 250px;
+  width: 500px;
   position: absolute;
-  top: 0rem;
-  right: 1.5rem;
+  top: 3rem;
+  right: 0;
 }
 
 .home__data {
-  padding-top: 8.5rem;
+  padding-top: 15.5rem;
 }
 
 .home__header {
@@ -299,13 +306,14 @@ img {
 
 .home__title {
   font-size: var(--biggest-font-size);
+  font-size: 4rem;
   background: var(--text-gradient);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   position: absolute;
   top: -5rem;
-  left: 1rem;
+  /* left: 1rem; */
   line-height: 6rem;
 }
 
@@ -337,8 +345,10 @@ img {
 /*=============== BUTTONS ===============*/
 .button {
   display: inline-block;
-  background-color: var(--black-color-alt);
-  color: var(--white-color);
+  /* background-color: var(--black-color-alt); */
+  background-color: hsl(100, 89%, 50%);
+  /* color: var(--white-color); */
+  color: #FFF;
   padding: 1rem 1.25rem;
   border-radius: .5rem;
   transition: .4s;
@@ -350,6 +360,7 @@ img {
 
 .button__icon {
   font-size: 1.2rem;
+  color: #FFF;
 }
 
 .button--flex {
@@ -362,7 +373,7 @@ img {
 /*=============== SPONSOR ===============*/
 .sponsor__img {
   width: 90px;
-  filter: var(--filter-icon);
+  /* filter: var(--filter-icon); */
   transition: var(--transition-anime);
 }
 
@@ -412,8 +423,8 @@ img {
 .specs__img {
   width: 250px;
   position: absolute;
-  top: 5rem;
-  right: -4rem;
+  top: 2.5rem;
+  right: -1rem;
 }
 
 
@@ -421,26 +432,24 @@ img {
 .case__container {
   position: relative;
   grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 5rem;
+  gap: 1rem;
+  /* margin-bottom: 5rem; */
 }
 
-.case__data {
-  padding: 5rem 0 3rem;
-  transition: var(--transition-anime);
-}
 
-.case__img {
-  width: 250px;
-  position: absolute;
-  left: -6rem;
+
+.case__img,
+.case__img2,
+.case__img3,
+.case__img4,
+.case__img5,
+.case__img6 {
   top: 3rem;
+  border-radius: .5rem;
+  border-bottom: hsl(100, 89%, 50%) 8px solid;
 }
 
-.case__description {
-  margin-bottom: var(--mb-1-5);
-  line-height: var(--text-line-height);
-  transition: var(--transition-anime);
-}
+
 
 
 /*=============== DISCOUNT ===============*/
@@ -461,13 +470,15 @@ img {
   margin-bottom: var(--mb-1);
   margin-right: 2.5rem;
   transition: var(--transition-anime);
+  width: 60%;
 }
 
 .discount__img {
   width: 300px;
   position: absolute;
-  top: -4rem;
-  right: -11rem;
+  top: 1.5rem;
+  right: -7rem;
+  border-radius: 50%;
 }
 
 
@@ -478,13 +489,13 @@ img {
 
 .products__container {
   grid-template-columns: repeat(2, 1fr);
-  gap: 5rem 1.5rem;
+  gap: 7rem 1.5rem;
   padding-top: 3rem;
 }
 
 .products__card {
   position: relative;
-  height: 132px;
+  height: 160px;
   background-color: var(--container-color);
   padding: .75rem;
   border-radius: .5rem;
@@ -493,16 +504,21 @@ img {
 }
 
 .products__img {
-  width: 80px;
+  width: 150px;
   position: absolute;
   inset: 0;
   margin-left: auto;
   margin-right: auto;
-  top: -3rem;
+  top: -6rem;
 }
 
 .products__content {
   align-self: flex-end;
+}
+
+.products__title {
+  margin-top: -4.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .products__title,
@@ -512,12 +528,13 @@ img {
 
 .products__price {
   font-weight: var(--font-semi-bold);
+  font-size: var(--h2-font-size);
 }
 
 .products__button {
   position: absolute;
   right: .5rem;
-  bottom: .5rem;
+  bottom: 1rem;
   padding: .5rem;
   border-radius: .35rem;
 }
@@ -530,8 +547,8 @@ img {
 }
 
 .footer__logo {
-  width: 2rem;
-  filter: var(--filter-icon);
+  width: 10rem;
+  /* filter: var(--filter-icon); */
 }
 
 .footer__title {
